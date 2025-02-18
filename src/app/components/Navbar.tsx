@@ -14,11 +14,10 @@ const topbardata = [
   { name: "more +", link: "/more" },
 ];
 
-// RouteAddress Component (Re-usable)
 const RouteAddress = ({
   title,
   link,
-  className = "", // Default empty class
+  className = "",
 }: {
   title: string;
   link: string;
@@ -37,7 +36,7 @@ function Navbar() {
   return (
     <div className="navbar bg-white flex items-center border-b shadow-md py-3 px-6 sticky">
       {/* Logo Section */}
-      <div className="flex items-center flex-shrink-0">
+      <div className="flex items-center">
         <Link href="/">
           <img
             src="https://cdn-resources.ableton.com/80bA26cPQ1hEJDFjpUKntxfqdmG3ZykO/static/images/ableton-hallmark.ef5355379032.svg"
@@ -48,14 +47,14 @@ function Navbar() {
       </div>
 
       {/* Navigation Links */}
-      <div className="flex flex-1 justify-center space-x-6">
+      <div className="flex flex-1 justify-center space-x-6 bg-red-200">
         {topbardata.map((item, index) => (
           <RouteAddress key={index} title={item.name} link={item.link} />
         ))}
       </div>
 
       {/* Login Section */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 bg-red-300">
         <RouteAddress title="Try live for 12 for free" link="/tryforfree" className="text-blue-600 font-semibold" />
         <RouteAddress title="Log in or Register" link="/login" className="text-gray-800 font-semibold" />
       </div>
